@@ -1,6 +1,4 @@
 ''' Assumes the recombinations_hmm is sorted for gametes and then for CO positions -- this is the case so it works
-This is so much for faster than looping through gametes  and sorting for position etc..
-
 '''
 
 # grr_file = 'nrec_hmm.txt'
