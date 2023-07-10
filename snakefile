@@ -1,10 +1,3 @@
-'''
-Phasing should be done with all samples not just with those with phenotypes.
-In the first LINKPHASE run allele coding was not taken care of.. so now I am recoding the alleles to ref/alt.
-So Essentially I can just add a couple of rules to the LINKPHASE workflow.
-'''
-
-
 # WILDCARDS
 breeds = ['fv', 'bv']
 chromosomes = range(1, 30)
