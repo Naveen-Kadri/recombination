@@ -1,16 +1,3 @@
-
-'''
-recode the alleles to ref/alt
-also removes the duplicated positions
-
-while getting the plink format from the interbull the recoding was done to get th enumber of "a allele" : should have been b allele I think.
-Does not matter as long as I remember what I did
-
-
-In vcf however the allele counts are of the alternative allele. so the flipping should be done when the alleles match ! [I have made this mistake and have realized it when I calculated the consensus !]
-
-'''
-
 import gzip
 
 # vcf_file='/cluster/work/pausch/naveen/RECOMBINATION/HAPBASED/CHR25/cleaned.vcf.gz'
