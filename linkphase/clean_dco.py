@@ -12,7 +12,7 @@ coposfile = snakemake.input.copos
 mapfile = snakemake.input.map
 outfile_cleaned = snakemake.output.cleaned
 outfile_dcos = snakemake.output.dcos
-
+thresh = snakemake.params.thresh
 
 out_clean = open (outfile_cleaned, 'w')
 out_dcos = open (outfile_dcos, 'w')
@@ -32,7 +32,7 @@ with open (mapfile) as inf:
         xnum, xsnp, xpos, xchr=line.rstrip().split()
         pos [xnum] = float(xpos) * 1_000_000
 
-thresh = 10**6
+
 prev_gam = 'NA'
 prev_end = thresh *-2
 nall = 0
