@@ -19,8 +19,6 @@ with open (mapfile, "rt") as inf:
         nm+=1
         xchr, name, link, pos=line.rstrip().split()
         pos = float(pos)/1_000_000
-        #tw = " ".join (  [nm, name, pos, xchr])
-        #out_map.write (f'{tw}\n')
         out_map.write (f'{nm}\t{name}\t{pos}\t{xchr}\n')
         
 out_map.close()

@@ -3,12 +3,6 @@ unk  <- snakemake@params[["missing_code"]]
 output_key  <- snakemake@output [["key"]]
 output_ped  <- snakemake@output [["pedigree"]]
 
-
-##pedfile  <-  '/cluster/work/pausch/naveen/RECOMBINATION/RECODE/bv/reduced.ped'
-##unk  <-  '49c79968ae1ce80754d1c95a1bf30b1c'
-
-
-
 ped <- read.table (pedfile, colClasses="character")
 sum (ped [,2] %in% ped [,1])
 missingsires <- ped [!ped [,2] %in% ped [,1] ,2  ]
@@ -30,10 +24,8 @@ colnames (ped) <-  c ("id", "sire", "dam", 'year')
 ped$tmp <- 0  
 ped$gen <- 0
 
-
 ngen=-1
 check=1
-
 
 while (check==1){
       check=0
@@ -52,8 +44,6 @@ while (check==1){
 }
 
 ped <- ped [order(ped[,  "gen"],  decreasing=T),  ]
-#end
-##plot (ped$year, ped$newcode)
 ped$newcode <- 1:nrow (ped)
 write.table (ped, output_ped, col.names=F,row.names=F,quote=F,sep="\t")
 key <- ped [,c("id","newcode")]

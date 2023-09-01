@@ -17,18 +17,6 @@ runs = [1, 2]
 wildcard_constraints:
     num = "\d"
 
-
-# rule all:
-#     input:
-#         expand(
-#             OUT_DIR + "/REFALT/LINKPHASE_RUN{run}/{breed}/cleaned_GRR.txt", run=runs, breed=breeds)
-
-# rule all:
-#     input:
-#         expand(
-#             OUT_DIR + '/REFALT/LINKPHASE_RUN{run}/{breed}/co_bins_{sex}.txt', run=runs, breed=breeds, sex=sexes)
-
-
 rule linkphase1:
     input:
         typ = rules.format_for_linkphase.output.typ,

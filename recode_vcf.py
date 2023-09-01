@@ -1,10 +1,7 @@
 import gzip
 key_file = snakemake.input.key
 vcf = snakemake.input.vcf
-
 out_vcf = open (snakemake.output.vcf, 'w')
-
-
 
 key ={}
 print ('reading the key file')
@@ -29,6 +26,5 @@ with gzip.open (vcf, "rt") as inf:
                 
         else:
             out_vcf.write (f'{line}')
-        
 out_vcf.close ()
 

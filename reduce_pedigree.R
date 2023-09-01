@@ -3,12 +3,8 @@ genophenofile <- snakemake@input [["genotyped"]]
 unk  <- snakemake@params[["missing_code"]]
 outfile  <- snakemake@output [["outfile"]]
 
-## pedfile   <-  '/nfs/nas12.ethz.ch/fs1201/green_groups_tg_public/data/BTA/asr_transfer/fv/geno.ped'
-## genophenofile  <-  '/cluster/work/pausch/naveen/RECOMBINATION/fv/genotyped.txt'
-## unk  <-  '49c79968ae1ce80754d1c95a1bf30b1c'
 
 cat ("Reading the pedigree file\n")
-#ped <- read.delim (pedfile, sep="\t", colClasses='character', head=F)
 ped <- read.table (pedfile,  colClasses='character')
 cat ('number of lines in the pedfile ', nrow (ped), "\n")
 
@@ -50,10 +46,3 @@ cat ("Pedigree not found for ::", length (nf), "\n")
 write.table (myped,  outfile, col.names=F, row.names=F, quote=F, sep="\t")
 
 cat ("Reduced pedigree is written to Reduced.ped", "\n\n\n")
-
-
-
-## x  <- unique( c(myped [,1], myped [,2],myped [,3] ))
-## length (x)
-## y  <- unique( c(ped [,1], ped [,2],ped [,3] )) ;length (y)
-## 100 * length (x) / length (y)

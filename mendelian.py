@@ -7,10 +7,6 @@ MISSING GENOTYPES -- If genotype is missing for one parent in a trio it is consi
 
 import gzip
 
-##vcf = '/cluster/work/pausch/naveen/RECOMBINATION/REFALT/bv/CHR25/recoded.vcf.gz'
-##pedigree_file = '/cluster/work/pausch/naveen/RECOMBINATION/REFALT/bv/recoded.pedigree'
-##log_file ='test.log'
-##out_file ='test.vcf'
 
 vcf = snakemake.input.vcf
 pedigree_file = snakemake.input.pedigree
